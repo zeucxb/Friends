@@ -4,7 +4,7 @@
   "description": "friends web api",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Anderson L. Ribeiro Anzileiro <anderson.anzileiro@gmail.com>",
