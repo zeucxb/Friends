@@ -1,21 +1,18 @@
 'use strict'
 
-const Restify           = require('restify')
+const Koa               = require('koa')
+,     KoaRoute          = require('koa-route')
 ,     Configuration     = require('./lib/utils/configuration.js')
 ,     UserRoutes        = require('./lib/routes/user.js')
 
-let Server = Restify.createServer(Configuration.server.info)
+let Server = Koa()
 
-//middleware
-Server.use(Restify.gzipResponse())
-Server.use(Restify.bodyParser())
-
-//routes
 UserRoutes.forEach((route) => {
-    Server[route.method](route.path, route.handler)
+    Server.use(KoaRoute[route.method](route.path, route.handler))
 })
 
 //startup
 Server.listen(Configuration.server.port, () => {
     console.log(`${ Server.name } listening at ${ Server.url }`)
 })
+

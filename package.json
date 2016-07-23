@@ -2,7 +2,7 @@
   "name": "friends-api",
   "version": "1.0.0",
   "description": "friends web api",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,7 @@
   "author": "Anderson L. Ribeiro Anzileiro <anderson.anzileiro@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "restify": "4.1.1"
+    "koa": "1.2.0",
+    "koa-route": "^2.4.2"
   }
 }
